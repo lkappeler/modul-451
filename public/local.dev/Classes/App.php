@@ -76,6 +76,7 @@ class App {
 	private function getNextPerson() {
 		$nextPerson = $this->queue->getNextPerson();
 
+		//TODO: Move to model in a to Array function
 		$nextPersonArray = array(
 			'firstName' => $nextPerson->getFirstName(),
 			'lastName' => $nextPerson->getLastName(),
