@@ -10,8 +10,8 @@ class App {
 	private $queue = NULL;
 
 	function __construct() {
-
-		$this->queue = new Queue();
+		//Restore queue object from session or init empty one
+		$this->queue = (!isset($_SESSION['queue']) ? new Queue() : unserialize($_SESSION['queue']));
 		$this->main();
 	}
 
@@ -24,8 +24,8 @@ class App {
 		if (isset($_POST['action'])) {
 
 			switch ( $_POST['action'] ) {
-				case 'test':
-					//die('test Action');
+				case 'getNextPerson':
+					$smarty->assign("nextPerson", $this->getNextPerson());
 					break;
 				case 'addPerson':
 					$this->addPerson($_POST['firstName'], $_POST['lastName'], $_POST['dateOfBirth']);
@@ -33,7 +33,8 @@ class App {
 			}
 		}
 
-		var_dump($this->queue->count());
+		$smarty->assign("queueCountText", "Personen in der Warteschlange: ");
+		$smarty->assign("queueCount", $this->queue->count());
 
 		//Template Engine Cache Configuration
 		$smarty->force_compile = true;
@@ -58,6 +59,9 @@ class App {
 
 		$smarty->assign("manyMore", '& many more');
 
+		//Store Queue Object in Session
+		$_SESSION['queue'] = serialize($this->queue);
+
 		//Render Page with the Smarty Template engine
 		$smarty->display('index.html');
 	}
@@ -67,5 +71,17 @@ class App {
 		//TODO: Add Validation
 		$newPerson = new Person($firstName, $lastName, $dateOfBirth);
 		$this->queue->addPerson($newPerson);
+	}
+
+	private function getNextPerson() {
+		$nextPerson = $this->queue->getNextPerson();
+
+		$nextPersonArray = array(
+			'firstName' => $nextPerson->getFirstName(),
+			'lastName' => $nextPerson->getLastName(),
+			'dateOfBirth' => $nextPerson->getDateOfBirth()
+		);
+
+		return $nextPersonArray;
 	}
 }

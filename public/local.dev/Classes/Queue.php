@@ -31,7 +31,7 @@ class Queue {
 	/**
 	 * @var array
 	 */
-	private $persons = array();
+	public $persons = array();
 
 	/**
 	 * @param \LNK\Classes\Person $person

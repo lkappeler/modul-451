@@ -15,7 +15,7 @@
 		<h2>Anstellen</h2>
 		<form method="post" action="/">
             <div class="hidden">
-                <input type="text" name="action" id="action" value="addPerson" />
+                <input type="text" name="action" value="addPerson" />
             </div>
             <div class="field">
                 <input type="text" name="firstName" id="firstName" placeholder="Vorname" />
@@ -28,19 +28,29 @@
 				<input type="date" name="dateOfBirth" id="dateOfBirth" placeholder="Geburtsdatum" />
 			</div>
 			<ul class="actions">
-                <input type="submit" value="Get Ticket">
+                <input type="submit" value="Eintragen">
 			</ul>
 		</form>
         <hr />
         <h2>Aufrufen</h2>
-        <form method="post" action="/">
-            <div class="hidden">
-                <input type="text" name="action" id="action" value="test" />
-            </div>
-			<ul class="actions">
-                <input type="submit" value="Get Ticket">
-			</ul>
-		</form>
+        <p>
+            {$queueCountText} {$queueCount}
+        </p>
+        {if $nextPerson}
+            <p>
+                Next: {$nextPerson['firstName']} {$nextPerson['lastName']} {$nextPerson['dateOfBirth']}
+            </p>
+        {/if}
+        {if $queueCount gt 0}
+            <form method="post" action="/">
+                <div class="hidden">
+                    <input type="text" name="action" value="getNextPerson" />
+                </div>
+                <ul class="actions">
+                    <input type="submit" value="Aufrufen">
+                </ul>
+            </form>
+        {/if}
 
         <footer>
             <hr />
