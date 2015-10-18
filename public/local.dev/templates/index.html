@@ -1,0 +1,68 @@
+{config_load file="test.conf" section="setup"}
+{include file="header.html"}
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+	<!-- Main -->
+	<section id="main">
+		<header>
+			<span class="avatar"><img src="images/build-icon.png" alt="" /></span>
+			<h1>{$headline}</h1>
+			<p>Wellcome to the project</p>
+		</header>
+		<hr />
+		<h2>Anstellen</h2>
+		<form method="post" action="/">
+            <div class="hidden">
+                <input type="text" name="action" id="action" value="addPerson" />
+            </div>
+            <div class="field">
+                <input type="text" name="firstName" id="firstName" placeholder="Vorname" />
+            </div>
+			<div class="field">
+				<input type="text" name="lastName" id="lastName" placeholder="Nachname" />
+			</div>
+			<div class="field">
+                <label for="dateOfBirth">Geburtsdatum</label>
+				<input type="date" name="dateOfBirth" id="dateOfBirth" placeholder="Geburtsdatum" />
+			</div>
+			<ul class="actions">
+                <input type="submit" value="Get Ticket">
+			</ul>
+		</form>
+        <hr />
+        <h2>Aufrufen</h2>
+        <form method="post" action="/">
+            <div class="hidden">
+                <input type="text" name="action" id="action" value="test" />
+            </div>
+			<ul class="actions">
+                <input type="submit" value="Get Ticket">
+			</ul>
+		</form>
+
+        <footer>
+            <hr />
+            <p>
+                {$thxTo}<br />
+                {section name=iteration loop=$thxToLinks}
+                    <a href="{$thxToLinks[iteration]}" target="_blank">{$thxToLinks[iteration]}</a><br />
+                {/section}
+                {$manyMore}
+            </p>
+		</footer>
+	</section>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<ul class="copyright">
+            <li>{$copyright}</li>
+			<li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+			<li>Background: <a href="http://ali1182.deviantart.com/art/Matrix-background-399607891" target="_blank">Ali1182</a></li>
+		</ul>
+	</footer>
+
+</div>
+
+{include file="footer.html"}

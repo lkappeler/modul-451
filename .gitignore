@@ -1,0 +1,11 @@
+.vagrant
+/data_bags/sites/*
+!/data_bags/sites/local.json
+
+.DS_Store
+.idea/
+
+.sass-cache
+
+public/local.dev/templates_c
+public/local.dev/cache
