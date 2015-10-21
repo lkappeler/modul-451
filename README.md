@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/nckappeler/modul-451.svg?branch=master)](https://travis-ci.org/nckappeler/modul-451)
+[![Build Status](https://travis-ci.org/nckappeler/modul-451.svg?branch=master)](https://travis-ci.org/nckappeler/modul-451) [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/nckappeler/modul-451/blob/master/LICENSE.md)
 
 Modul 451 - Software Testing
 ============
