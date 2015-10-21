@@ -14,7 +14,8 @@ include_recipe "composer"
 include_recipe "phing"
 include_recipe "mailhog"
 include_recipe "postfix"
-include_recipe "jenkins"
+include_recipe 'jenkins::java'
+include_recipe 'jenkins::master'
 
 # Initialize php extensions list
 php_extensions = []

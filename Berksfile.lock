@@ -30,7 +30,7 @@ GRAPH
   composer (2.2.0)
     php (>= 0.0.0)
     windows (>= 0.0.0)
-  dmg (2.2.2)
+  dmg (2.3.0)
   git (4.3.4)
     build-essential (>= 0.0.0)
     dmg (>= 0.0.0)
