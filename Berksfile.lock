@@ -12,6 +12,7 @@ DEPENDENCIES
   percona (~> 0.16.1)
   phing (~> 0.0.3)
   php (~> 1.7.2)
+  phpunit (~> 1.0.2)
   postfix (~> 3.7.0)
   python (~> 1.4.6)
 
@@ -77,6 +78,9 @@ GRAPH
     windows (>= 0.0.0)
     xml (>= 0.0.0)
     yum-epel (>= 0.0.0)
+  phpunit (1.0.2)
+    composer (>= 0.0.0)
+    php (>= 0.0.0)
   postfix (3.7.0)
   python (1.4.6)
     build-essential (>= 0.0.0)
