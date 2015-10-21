@@ -9,4 +9,3 @@ php:
   - nightly
 
 install:
-  - git submodule update --init

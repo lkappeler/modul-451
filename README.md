@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/nckappeler/modul-451.svg?branch=master)](https://travis-ci.org/nckappeler/modul-451)
+
 Modul 451 - Software Testing
 ============
 
