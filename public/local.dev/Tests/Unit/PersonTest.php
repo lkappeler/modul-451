@@ -1,6 +1,6 @@
 <?php
 
-namespace LNK\Tests;
+namespace LNK\Tests\Unit;
 
 require_once __DIR__ . DIRECTORY_SEPARATOR . '../../Classes/Person.php';
 
