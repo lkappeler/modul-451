@@ -13,13 +13,20 @@ class PersonTest extends \PHPUnit_Framework_TestCase {
 		return $stack;
 	}
 
-	public function testPerson() {
+	public function testInstancePerson() {
 
 		$person = new \LNK\Classes\Person('Hans', 'Muster', '01-01-1970');
 
 		$this->assertEquals('Hans', $person->getFirstName());
 		$this->assertEquals('Muster', $person->getLastName());
 		$this->assertEquals('01-01-1970', $person->getDateOfBirth());
+
+		return $person;
+	}
+
+	public function testSetterAndGetter() {
+
+		$person = new \LNK\Classes\Person('Hans', 'Muster', '01-01-1970');
 
 		$person->setFirstName('Fidel');
 		$person->setLastName('Castro');
