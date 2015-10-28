@@ -18,7 +18,7 @@ class QueueTest extends \PHPUnit_Framework_TestCase {
 		$queue = new \LNK\Classes\Queue();
 
 		$mock = $this->getMockBuilder('\LNK\Classes\Person')
-			->setMethods(["__construct"])
+			->setMethods( array("__construct") )
 			->setConstructorArgs( array( 'Lorenzo', 'Kappeler', '01.01.1990' ) )
 			->getMock();
 
