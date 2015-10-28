@@ -39,4 +39,9 @@ class PersonTest extends \PHPUnit_Framework_TestCase {
 		return $person;
 	}
 
+	public function failTest() {
+
+		return FALSE;
+	}
+
 }
