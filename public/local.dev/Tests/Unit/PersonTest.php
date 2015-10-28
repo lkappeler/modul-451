@@ -2,7 +2,7 @@
 
 namespace LNK\Tests;
 
-require_once __DIR__.DIRECTORY_SEPARATOR.'../Classes/Person.php';
+require_once __DIR__ . DIRECTORY_SEPARATOR . '../Classes/Person.php';
 
 class PersonTest extends \PHPUnit_Framework_TestCase {
 
