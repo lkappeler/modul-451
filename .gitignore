@@ -9,3 +9,7 @@
 
 public/local.dev/templates_c
 public/local.dev/cache
+
+#Server
+templates_c/	
+webhook-deployer/
